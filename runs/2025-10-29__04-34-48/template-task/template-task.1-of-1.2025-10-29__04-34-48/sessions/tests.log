@@ -1,0 +1,24 @@
+[?2004hroot@4cb036de5f7c:/app# asciinema rec --stdin /logs/tests.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/tests.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004hroot@4cb036de5f7c:/app# clear
+[?2004l[H[J[3J[?2004hroot@4cb036de5f7c:/app# bash /tests/run-tests.sh; tmux wait -S done
+[?2004l[1m===================================================================== test session starts ======================================================================[0m
+platform linux -- Python 3.13.1, pytest-8.4.2, pluggy-1.6.0 -- /usr/local/bin/python3.13
+cachedir: .pytest_cache
+rootdir: /tests
+[1mcollecting ... [0m[1mcollected 2 items                                                                                                                                              [0m
+
+../tests/test_outputs.py::test_hello_file_exists [32mPASSED[0m[32m                                                                                                  [ 50%][0m
+../tests/test_outputs.py::test_hello_file_content [32mPASSED[0m[32m                                                                                                 [100%][0m
+
+============================================================================ PASSES ============================================================================
+[36m[1m=================================================================== short test summary info ====================================================================[0m
+[32mPASSED[0m ../tests/test_outputs.py::[1mtest_hello_file_exists[0m
+[32mPASSED[0m ../tests/test_outputs.py::[1mtest_hello_file_content[0m
+[32m====================================================================== [32m[1m2 passed[0m[32m in 0.02s[0m[32m =======================================================================[0m
+[?2004hroot@4cb036de5f7c:/app# [?2004l
+exit
+[0;32masciinema: recording finished[0m
+[0;32masciinema: asciicast saved to /logs/tests.cast[0m
+[?2004hroot@4cb036de5f7c:/app# 

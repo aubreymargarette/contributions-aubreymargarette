@@ -1,0 +1,30 @@
+{
+    "run_id": "2025-10-29__04-40-33",
+    "uuid": "7ab8ea38-c06a-4542-94ce-0f838291a97d",
+    "dataset_path": "/home/aubrey/parsewave-contributor/contributions-aubreymargarette/contributor_tasks",
+    "dataset_name": null,
+    "dataset_version": null,
+    "output_path": "/home/aubrey/parsewave-contributor/contributions-aubreymargarette/runs",
+    "agent_name": "nop",
+    "no_rebuild": false,
+    "cleanup": true,
+    "log_level": 20,
+    "task_ids": [
+        "template-task"
+    ],
+    "exclude_task_ids": null,
+    "n_tasks": null,
+    "n_concurrent_trials": 5,
+    "n_attempts": 1,
+    "dataset_size": 1,
+    "accuracy": 0.0,
+    "model_name": null,
+    "start_time": "2025-10-28T20:40:33.997998+00:00",
+    "end_time": "2025-10-28T20:40:54.900276+00:00",
+    "commit_hash": "2d0940932c09488ce2fbd6a6fbc3f8e1588c46fa",
+    "username": "Aubrey Margarette Udtohan",
+    "s3_bucket": null,
+    "agent_kwargs": null,
+    "pass_at_k": {},
+    "resumed_at": null
+}

@@ -1,0 +1,34 @@
+{
+    "id": "3679ded4-230a-4fcd-b562-5df6817a01e7",
+    "results": [
+        {
+            "id": "1ac4b392-4949-44ac-a798-ffae917c2af0",
+            "trial_name": "template-task.1-of-1.2025-10-29__04-34-48",
+            "task_id": "template-task",
+            "instruction": "Create a file called /app/test.txt. Write \"aubreymargarette is a rockstar developer\" to it.",
+            "is_resolved": true,
+            "failure_mode": "unset",
+            "parser_results": {
+                "test_hello_file_exists": "passed",
+                "test_hello_file_content": "passed"
+            },
+            "recording_path": "2025-10-29__04-34-48/template-task/template-task.1-of-1.2025-10-29__04-34-48/sessions/agent.cast",
+            "total_input_tokens": 0,
+            "total_output_tokens": 0,
+            "trial_started_at": "2025-10-28T20:34:48.286590+00:00",
+            "trial_ended_at": "2025-10-28T20:35:11.320607+00:00",
+            "agent_started_at": "2025-10-28T20:35:01.830248+00:00",
+            "agent_ended_at": "2025-10-28T20:35:02.293232+00:00",
+            "test_started_at": "2025-10-28T20:35:06.700865+00:00",
+            "test_ended_at": "2025-10-28T20:35:07.886584+00:00"
+        }
+    ],
+    "pass_at_k": {},
+    "n_resolved": 1,
+    "n_unresolved": 0,
+    "resolved_ids": [
+        "template-task"
+    ],
+    "unresolved_ids": [],
+    "accuracy": 1.0
+}

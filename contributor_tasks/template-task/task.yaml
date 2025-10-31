@@ -1,12 +1,21 @@
 instruction: |-
-  Create a file called /app/test.txt. Write "aubreymargarette is a rockstar developer" to it.
+  Create a new Linux group named 'devteam' and two users: 'aubrey' and 'margarette'.
+  Add both users to the 'devteam' group.
+  Create a directory '/shared/dev' that belongs to the 'devteam' group.
+  Configure it so that:
+  - Members of the 'devteam' group can read, write, and execute files inside it.
+  - New files created inside '/shared/dev' automatically inherit the 'devteam' group ownership.
+  Finally, verify that both 'aubrey' and 'margarette' can create and edit files in '/shared/dev'.
+
+author_name: Aubrey Margarette C. Udtohan
+author_email: udtohan.aubrey@gmail.com
 difficulty: easy
-category: file-operations
+category: system-administration
 tags:
-  - file-operations
+  - linux
+  - permissions
+  - users
+  - groups
 parser_name: pytest
 max_agent_timeout_sec: 300.0
-max_test_timeout_sec: 120.0
-run_tests_in_same_shell: false
-expert_time_estimate_min: 5
-junior_time_estimate_min: 10
+max_test_timeout_sec: 30.0

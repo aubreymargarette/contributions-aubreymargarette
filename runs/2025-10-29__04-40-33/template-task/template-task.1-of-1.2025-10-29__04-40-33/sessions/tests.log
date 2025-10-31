@@ -1,0 +1,73 @@
+[?2004hroot@38f5a65c97f0:/app# asciinema rec --stdin /logs/tests.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/tests.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004hroot@38f5a65c97f0:/app# clear
+[?2004l[H[J[3J[?2004hroot@38f5a65c97f0:/app# bash /tests/run-tests.sh; tmux wait -S done
+[?2004l[1m===================================================================== test session starts ======================================================================[0m
+platform linux -- Python 3.13.1, pytest-8.4.2, pluggy-1.6.0 -- /usr/local/bin/python3.13
+cachedir: .pytest_cache
+rootdir: /tests
+[1mcollecting ... [0m[1mcollected 2 items                                                                                                                                              [0m
+
+../tests/test_outputs.py::test_hello_file_exists [31mFAILED[0m[31m                                                                                                  [ 50%][0m
+../tests/test_outputs.py::test_hello_file_content [31mFAILED[0m[31m                                                                                                 [100%][0m
+
+=========================================================================== FAILURES ===========================================================================
+[31m[1m____________________________________________________________________ test_hello_file_exists ____________________________________________________________________[0m
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92mtest_hello_file_exists[39;49;00m():[90m[39;49;00m
+    [90m    [39;49;00m[33m"""Test that test.txt file exists in the current directory."""[39;49;00m[90m[39;49;00m
+        hello_path = Path([33m"[39;49;00m[33m/app/test.txt[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+    [90m[39;49;00m
+>       [94massert[39;49;00m hello_path.exists(), [33mf[39;49;00m[33m"[39;49;00m[33mFile [39;49;00m[33m{[39;49;00mhello_path[33m}[39;49;00m[33m does not exist[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+[1m[31mE       AssertionError: File /app/test.txt does not exist[0m
+[1m[31mE       assert False[0m
+[1m[31mE        +  where False = exists()[0m
+[1m[31mE        +    where exists = PosixPath('/app/test.txt').exists[0m
+
+[1m[31m/tests/test_outputs.py[0m:8: AssertionError
+[31m[1m___________________________________________________________________ test_hello_file_content ____________________________________________________________________[0m
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92mtest_hello_file_content[39;49;00m():[90m[39;49;00m
+    [90m    [39;49;00m[33m"""Test that test.txt contains exactly 'aubreymargarette is a rockstar developer' followed by a newline."""[39;49;00m[90m[39;49;00m
+        hello_path = Path([33m"[39;49;00m[33m/app/test.txt[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+    [90m[39;49;00m
+>       [94massert[39;49;00m hello_path.read_text().strip() == [33m"[39;49;00m[33maubreymargarette is a rockstar developer[39;49;00m[33m"[39;49;00m, ([90m[39;49;00m
+               ^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+            [33mf[39;49;00m[33m"[39;49;00m[33mExpected [39;49;00m[33m'[39;49;00m[33maubreymargarette is a rockstar developer[39;49;00m[33m'[39;49;00m[33m but got [39;49;00m[33m'[39;49;00m[33m{[39;49;00mhello_path.read_text().strip()[33m}[39;49;00m[33m'[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+        )[90m[39;49;00m
+
+[1m[31m/tests/test_outputs.py[0m:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[1m[31m/usr/local/lib/python3.13/pathlib/_local.py[0m:546: in read_text
+    [0m[94mreturn[39;49;00m PathBase.read_text([96mself[39;49;00m, encoding, errors, newline)[90m[39;49;00m
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+[1m[31m/usr/local/lib/python3.13/pathlib/_abc.py[0m:632: in read_text
+    [0m[94mwith[39;49;00m [96mself[39;49;00m.open(mode=[33m'[39;49;00m[33mr[39;49;00m[33m'[39;49;00m, encoding=encoding, errors=errors, newline=newline) [94mas[39;49;00m f:[90m[39;49;00m
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/app/test.txt'), mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92mopen[39;49;00m([96mself[39;49;00m, mode=[33m'[39;49;00m[33mr[39;49;00m[33m'[39;49;00m, buffering=-[94m1[39;49;00m, encoding=[94mNone[39;49;00m,[90m[39;49;00m
+             errors=[94mNone[39;49;00m, newline=[94mNone[39;49;00m):[90m[39;49;00m
+    [90m    [39;49;00m[33m"""[39;49;00m
+    [33m    Open the file pointed to by this path and return a file object, as[39;49;00m
+    [33m    the built-in open() function does.[39;49;00m
+    [33m    """[39;49;00m[90m[39;49;00m
+        [94mif[39;49;00m [33m"[39;49;00m[33mb[39;49;00m[33m"[39;49;00m [95mnot[39;49;00m [95min[39;49;00m mode:[90m[39;49;00m
+            encoding = io.text_encoding(encoding)[90m[39;49;00m
+>       [94mreturn[39;49;00m io.open([96mself[39;49;00m, mode, buffering, encoding, errors, newline)[90m[39;49;00m
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+[1m[31mE       FileNotFoundError: [Errno 2] No such file or directory: '/app/test.txt'[0m
+
+[1m[31m/usr/local/lib/python3.13/pathlib/_local.py[0m:537: FileNotFoundError
+[36m[1m=================================================================== short test summary info ====================================================================[0m
+[31mFAILED[0m ../tests/test_outputs.py::[1mtest_hello_file_exists[0m - AssertionError: File /app/test.txt does not exist
+[31mFAILED[0m ../tests/test_outputs.py::[1mtest_hello_file_content[0m - FileNotFoundError: [Errno 2] No such file or directory: '/app/test.txt'
+[31m====================================================================== [31m[1m2 failed[0m[31m in 0.30s[0m[31m =======================================================================[0m
+[?2004hroot@38f5a65c97f0:/app# [?2004l
+exit
+[0;32masciinema: recording finished[0m
+[0;32masciinema: asciicast saved to /logs/tests.cast[0m
+[?2004hroot@38f5a65c97f0:/app# 

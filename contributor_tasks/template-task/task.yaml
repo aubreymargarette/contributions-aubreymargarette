@@ -1,11 +1,13 @@
-instruction: |-
-  Create a new Linux group named 'devteam' and two users: 'aubrey' and 'margarette'.
-  Add both users to the 'devteam' group.
-  Create a directory '/shared/dev' that belongs to the 'devteam' group.
+instruction: |
+  Create a new Linux group named 'devteam'.  
+  Create two users: 'aubrey' and 'margarette'.  
+  Add both users to the 'devteam' group as **supplementary members**.  
+  Create a directory '/shared/dev' that belongs to the 'devteam' group.  
   Configure it so that:
   - Members of the 'devteam' group can read, write, and execute files inside it.
-  - New files created inside '/shared/dev' automatically inherit the 'devteam' group ownership.
+  - New files created inside '/shared/dev' automatically inherit the 'devteam' group ownership (setgid).
   Finally, verify that both 'aubrey' and 'margarette' can create and edit files in '/shared/dev'.
+  - Ensure that files created by users are readable immediately after creation.
 
 author_name: Aubrey Margarette C. Udtohan
 author_email: udtohan.aubrey@gmail.com
